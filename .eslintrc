@@ -5,13 +5,7 @@
   },
 
   // 린트하고 싶지 않은 디렉터리를 설정해줄 수 있습니다.
-  "ignorePatterns": [
-    "cypress",
-    "src/stories",
-    "next.config.js",
-    "next-sitemap.config.js",
-    ".eslintrc"
-  ],
+  "ignorePatterns": ["next.config.js", "next-sitemap.config.js"],
 
   // 공개되어있는 설정을 그대로 가져와 기반(base) 설정으로 활용할 수 있습니다.
   "extends": [
