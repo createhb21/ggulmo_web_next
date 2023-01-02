@@ -1,0 +1,104 @@
+{
+  // parserOptions 은 ESLint 사용을 위해 지원하려는 Javascript 언어 옵션을 지정할 수 있습니다.
+  "parserOptions": {
+    "project": ["tsconfig.json"]
+  },
+
+  // 린트하고 싶지 않은 디렉터리를 설정해줄 수 있습니다.
+  "ignorePatterns": [
+    "cypress",
+    "src/stories",
+    "next.config.js",
+    "next-sitemap.config.js",
+    ".eslintrc"
+  ],
+
+  // 공개되어있는 설정을 그대로 가져와 기반(base) 설정으로 활용할 수 있습니다.
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:prettier/recommended",
+    "plugin:cypress/recommended"
+  ],
+
+  /* 설정 파일에서 rules 옵션은 규칙 하나 하나를 세세하게 제어하기 위해서 사용됩니다. 보통 extends 옵션을 통해서 설정된 규칙을 덮어쓰고 싶을 때 유용하게 쓸 수 있습니다. */
+  "rules": {
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
+    "react/function-component-definition": [
+      "error",
+      { "namedComponents": "arrow-function" }
+    ],
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
+    "react/jsx-props-no-spreading": ["off"],
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md
+    "react/react-in-jsx-scope": ["off"],
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
+    "react/require-default-props": ["off"],
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md
+    "react/jsx-no-bind": [
+      "error",
+      { "allowFunctions": true, "allowArrowFunctions": true }
+    ],
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-unstable-nested-components.md
+    "react/no-unstable-nested-components": ["error", { "allowAsProps": true }],
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
+    "react/no-array-index-key": ["off"],
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-cycle.md
+    "import/no-cycle": ["off"],
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/prefer-default-export.md
+    "import/prefer-default-export": ["off"],
+    // https://eslint.org/docs/latest/rules/no-param-reassign
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": ["draft", "inputRefs", "e"]
+      }
+    ],
+    // https://eslint.org/docs/latest/rules/no-use-before-define
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    // https://eslint.org/docs/latest/rules/no-shadow
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "warn",
+    // https://eslint.org/docs/latest/rules/no-underscore-dangle
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    // Disallow the use of alert, confirm, and prompt
+    "no-alert": "off",
+    // https://eslint.org/docs/latest/rules/no-throw-literal
+    "no-throw-literal": "off",
+    "@typescript-eslint/no-throw-literal": "warn",
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-unknown-property.md
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
+    // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/no-noninteractive-element-interactions.md
+    "jsx-a11y/no-noninteractive-element-interactions": [
+      "error",
+      {
+        "handlers": ["onClick"]
+      }
+    ],
+    // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/no-noninteractive-tabindex.md
+    "jsx-a11y/no-noninteractive-tabindex": [
+      "error",
+      {
+        "tags": ["label"],
+        "roles": ["tabpanel"],
+        "allowExpressionValues": true
+      }
+    ],
+    // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/role-supports-aria-props.md
+    "jsx-a11y/role-supports-aria-props": ["off"],
+    // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/anchor-is-valid.md
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ],
+    // https://eslint.org/docs/latest/rules/max-classes-per-file
+    "max-classes-per-file": ["off"]
+  }
+}

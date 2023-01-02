@@ -1,0 +1,24 @@
+name-template: "v$NEXT_PATCH_VERSION"
+tag-template: "v$NEXT_PATCH_VERSION"
+
+categories:
+  - title: "✨ Feat"
+    labels: "✨ Feat"
+  - title: "🔨 Refactor"
+    labels: "🔨 Refactor"
+  - title: "🌈 Style"
+    labels: "🌈 Style"
+  - title: "🧨 Fix"
+    label: "🧨 Fix"
+  - title: "⤴️ Merge"
+    labels: "⤴️ Merge"
+  - title: "📃 Documentation"
+    labels: "📃 Documentation"
+  - title: "🙋‍♂️ Question"
+    labels: "🙋‍♂️ Question"
+
+change-template: "- $TITLE #$NUMBER @$AUTHOR "
+template: |
+  ## Summary
+  ## Changes
+  $CHANGES

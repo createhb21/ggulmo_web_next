@@ -1,0 +1,2 @@
+export const DEFAULT_TRANSITION = 3000;
+export const DURATION_TRANSITION = 600;
